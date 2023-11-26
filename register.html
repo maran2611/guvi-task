@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <header>
+        <h1>Registration Page</h1>
+    </header>
+
+    <section>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Enter your email">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+
+        <button onclick="registerUser()">Register</button>
+        <div class="login_content">
+            <p> or if you have an account already <a href="login.html">Signin</a></p>
+        </div>
+    </section>
+    <script src="js/register.js"></script>
+</body>
+
+</html>

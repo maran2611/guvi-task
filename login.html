@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login_page</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+    <header>
+        <h1>Login Page</h1>
+    </header>
+
+    <section>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter your username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+
+        <button onclick="loginUser()">Login</button>
+    </section>
+    <script>
+function loginUser() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    // Create an object with user login data
+    const loginData = {
+        "username": username,
+        "password": password
+    };
+    console.log(username);
+
+
+
+
+   // Send a POST request to the PHP backe
+    fetch('http://localhost/guvi_task/php/login.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(loginData),
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert(data.message);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Registration failed');
+        });
+ }
+    </script>
+</body>
+
+</html>
